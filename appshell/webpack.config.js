@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "auto",
   },
 
   resolve: {
@@ -44,7 +44,7 @@ module.exports = (_, argv) => ({
       name: "appshell",
       filename: "remoteEntry.js",
       remotes: {
-        "userauth": "userauth@http://localhost:3001/remoteEntry.js"
+        userauth: "userauth@http://localhost:3001/remoteEntry.js",
       },
       exposes: {},
       shared: {
@@ -61,6 +61,6 @@ module.exports = (_, argv) => ({
     }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
-    }),   
+    }),
   ],
 });
