@@ -44,7 +44,7 @@ module.exports = (_, argv) => ({
       name: "appshell",
       filename: "remoteEntry.js",
       remotes: {
-        userauth: "userauth@http://localhost:3001/remoteEntry.js",
+        userauth: "userauth@https://micro-fe-userauth.vercel.app/remoteEntry.js",
       },
       exposes: {},
       shared: {
